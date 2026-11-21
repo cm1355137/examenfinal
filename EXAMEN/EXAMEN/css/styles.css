@@ -1,0 +1,88 @@
+:root{--ink:#0A2A5E;--violet:#1E64D8;--lime:#CFE2FF;--bg:#F4F8FE;--card:#fff;--line:#D3E0F2;--mut:#4A5F7A;--side:250px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:400 1.05rem/1.65 "DM Sans",sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,h3{font-family:Unbounded,sans-serif;line-height:1.2}
+h2{font-size:1.5rem;margin:0 0 1.5rem}
+h3{font-size:1.05rem}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--violet);outline-offset:2px}
+/* Barra lateral */
+.side{position:fixed;inset:0 auto 0 0;width:var(--side);background:var(--ink);color:#fff;padding:2rem 1.4rem;display:flex;flex-direction:column;gap:2rem;z-index:10}
+.brand{display:grid;gap:.5rem;text-decoration:none}
+.logo{width:48px;height:48px;background:var(--lime);color:var(--ink);font:700 1rem Unbounded;display:grid;place-items:center;border-radius:10px}
+.uni{font-size:.82rem;line-height:1.3;color:#CFDDF5}
+.car{font:700 1.05rem/1.25 Unbounded;color:var(--lime)}
+nav{display:flex;flex-direction:column;gap:.2rem}
+nav a{color:#CFDDF5;text-decoration:none;padding:.5rem .8rem;border-left:3px solid transparent}
+nav a:hover{color:#fff;border-left-color:var(--lime);background:rgba(255,255,255,.06)}
+.burger{display:none;background:none;border:1px solid #fff;color:#fff;padding:.3rem .8rem;border-radius:6px;font:inherit}
+main{margin-left:var(--side)}
+section{padding:4rem clamp(1.2rem,5vw,4rem)}
+section>*{max-width:980px}
+.band{background:#fff}
+.lead{font-size:1.25rem;max-width:62ch}
+/* Carrusel */
+.carousel{background:var(--violet);color:#fff;padding:0;min-height:78vh;position:relative;display:flex;flex-direction:column;overflow:hidden}
+.carousel>*{max-width:none}
+.slides{display:flex;flex:1;transition:transform .6s}
+.slide{min-width:100%;display:flex;flex-direction:column;justify-content:center;padding:4rem clamp(1.2rem,5vw,4rem)}
+.slide h1{font-size:clamp(2rem,5.5vw,4.4rem);margin:0 0 1.2rem;max-width:14ch;letter-spacing:-.02em}
+.slide p{font-size:1.25rem;max-width:50ch;margin:0;color:#E6EFFF}
+.slide:nth-child(2){background:#0A2A5E}.slide:nth-child(3){background:#1750A8}.slide:nth-child(4){background:#0F3C8A}
+.ctrl{display:flex;align-items:center;gap:1rem;padding:1.2rem clamp(1.2rem,5vw,4rem)}
+.ctrl button{background:var(--lime);color:var(--ink);border:0;width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.dots{display:flex;gap:.5rem}
+.dots button{width:28px;height:6px;border-radius:3px;background:rgba(255,255,255,.4)}
+.dots button.on{background:var(--lime)}
+/* Línea de horarios */
+.tl{margin-bottom:2rem}
+.tl-track{position:relative;height:84px;background:#fff;border:1px solid var(--line);border-radius:10px}
+.seg{position:absolute;top:6px;bottom:6px;border-radius:7px;padding:.4rem .6rem;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.seg b{font:700 .95rem Unbounded}.seg span{font-size:.85rem}
+.seg.m{background:var(--lime);color:var(--ink)}.seg.t{background:var(--violet);color:#fff}.seg.n{background:var(--ink);color:#fff}
+.tl-ticks{position:relative;height:1.6rem;font-size:.78rem;color:var(--mut)}
+.tl-ticks i{position:absolute;transform:translateX(-50%);font-style:normal}
+/* Tarjetas */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem}
+.card{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:1.2rem}
+.band .card{background:var(--bg)}
+.card h3{margin:0 0 .5rem}.card p{margin:.3rem 0;color:var(--mut)}
+.card .tag{display:inline-block;background:var(--lime);color:var(--ink);font-weight:700;padding:.1rem .7rem;border-radius:999px;font-size:.85rem}
+.chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.7rem}
+.chips li{border:2px solid var(--ink);padding:.5rem 1.1rem;border-radius:999px;font-weight:500}
+.chips li:nth-child(3n+1){background:var(--lime)}
+/* Organigrama: árbol vertical */
+.org{border-left:3px solid var(--ink);padding-left:1.8rem;display:flex;flex-direction:column;gap:1.4rem}
+.org .lvl{display:flex;flex-wrap:wrap;gap:.7rem;position:relative}
+.org .lvl::before{content:"";position:absolute;left:-1.8rem;top:1.1rem;width:1.4rem;border-top:3px solid var(--ink)}
+.org .box{border:2px solid var(--ink);background:#fff;padding:.5rem 1rem;border-radius:8px}
+.org .box.hl{background:var(--violet);color:#fff;font-weight:700}
+/* Pestañas y tabla */
+.tabs{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap}
+.tabs button{padding:.55rem 1.2rem;border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:999px;cursor:pointer;font:500 1rem inherit}
+.tabs button[aria-selected=true]{background:var(--ink);color:#fff}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:#fff;border:2px solid var(--ink)}
+th,td{text-align:left;padding:.6rem .9rem;border-bottom:1px solid var(--line)}
+th{background:var(--lime)}
+/* Formulario */
+form{display:grid;gap:1rem;max-width:560px;margin-bottom:2rem}
+label{display:grid;gap:.3rem;font-weight:700}
+input,select,textarea{font:inherit;padding:.65rem;border:2px solid var(--ink);border-radius:8px;background:#fff}
+form button{justify-self:start;background:var(--violet);color:#fff;border:0;padding:.75rem 1.5rem;border-radius:999px;font:700 1rem inherit;cursor:pointer}
+form button:disabled{opacity:.6}
+#msg{margin:0;font-weight:700}
+#lista .card{margin-bottom:.8rem}
+footer{background:var(--ink);color:#CFDDF5;padding:1.5rem clamp(1.2rem,5vw,4rem)}
+/* Móvil */
+@media(max-width:860px){
+ main{margin-left:0;padding-top:64px}
+ .side{inset:0 0 auto 0;width:auto;flex-direction:row;align-items:center;justify-content:space-between;padding:.7rem 1.2rem;gap:1rem;flex-wrap:wrap}
+ .brand{grid-template-columns:auto 1fr;column-gap:.7rem;row-gap:0;align-items:center}
+ .logo{grid-row:span 2;width:40px;height:40px;font-size:.85rem}.uni{font-size:.65rem}.car{font-size:.8rem}
+ .burger{display:block}
+ nav{display:none;width:100%}nav.open{display:flex}
+ .seg span{display:none}.seg{padding:.3rem}.seg b{font-size:.62rem}
+ .tl-ticks i:nth-child(even){display:none}
+}
+@media(prefers-reduced-motion:reduce){.slides{transition:none}html{scroll-behavior:auto}}

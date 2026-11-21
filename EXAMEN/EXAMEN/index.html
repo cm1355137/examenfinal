@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Universidad Nacional Héroes de San José | Ingeniería en Computación</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<aside class="side">
+  <a class="brand" href="#inicio"><span class="logo" aria-hidden="true">UN</span><span class="uni">Universidad Nacional Héroes de San José</span><span class="car">Ingeniería en Computación</span></a>
+  <button class="burger" aria-label="Abrir menú" aria-expanded="false">Menú</button>
+  <nav id="menu">
+    <a href="#organigrama">Universidad</a><a href="#descripcion">La carrera</a>
+    <a href="#modalidades">Turnos y horarios</a><a href="#perfiles">Perfiles de salida</a>
+    <a href="#areas">Áreas de estudio</a><a href="#plan">Plan de estudio</a>
+    <a href="#resenas">Reseñas</a><a href="#comentarios">Comentarios</a>
+  </nav>
+</aside>
+
+<main>
+<section id="inicio" class="carousel" aria-label="Información destacada">
+  <div class="slides" id="slides"></div>
+  <div class="ctrl">
+    <button class="prev" aria-label="Anterior">←</button>
+    <div class="dots" id="dots"></div>
+    <button class="next" aria-label="Siguiente">→</button>
+  </div>
+</section>
+
+<section id="descripcion" class="band">
+  <h2>Descripción de la carrera</h2>
+  <p id="desc" class="lead"></p>
+</section>
+
+<section id="modalidades">
+  <h2>Turnos, duración y horarios</h2>
+  <div id="timeline"></div>
+  <div class="grid" id="mod"></div>
+</section>
+
+<section id="perfiles" class="band">
+  <h2>Perfiles de salida</h2>
+  <ul class="chips" id="perfilesList"></ul>
+</section>
+
+<section id="areas">
+  <h2>Áreas de estudio</h2>
+  <div class="grid" id="areasList"></div>
+</section>
+
+<section id="plan" class="band">
+  <h2>Plan de estudio por turno</h2>
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div id="planBody"></div>
+</section>
+
+<section id="organigrama">
+  <h2>Organigrama de la Universidad</h2>
+  <div class="org" id="org"></div>
+</section>
+
+<section id="resenas" class="band">
+  <h2>Reseñas</h2>
+  <div class="grid" id="resenasList"></div>
+</section>
+
+<section id="comentarios">
+  <h2>Déjanos tu comentario</h2>
+  <form id="form">
+    <label>Nombre<input name="nombre" required maxlength="60"></label>
+    <label>Valoración
+      <select name="valoracion" required>
+        <option value="5">5 – Excelente</option><option value="4">4 – Muy buena</option>
+        <option value="3">3 – Buena</option><option value="2">2 – Regular</option><option value="1">1 – Mala</option>
+      </select>
+    </label>
+    <label>Comentario<textarea name="comentario" rows="4" required maxlength="500"></textarea></label>
+    <button type="submit">Enviar comentario</button>
+    <p id="msg" role="status"></p>
+  </form>
+  <h3>Comentarios recientes</h3>
+  <div id="lista"></div>
+</section>
+<footer>Universidad Nacional Héroes de San José · Ingeniería en Computación · Proyecto académico</footer>
+</main>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
